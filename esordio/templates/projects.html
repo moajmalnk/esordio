@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block title %}Projects{% endblock %}
+
+{% block navlogo %} 
+<a class="navbar-brand" href="{% url 'home' %}" target="_blank"><img src="{% static 'images/ESORDIOLOGOblack.png' %}" alt="LOGO"></a>
+{% endblock%}
+ 
+{% block content %}
+
+<div class="pad-div"></div>
+  <section>
+    <div class="gallery container">
+      <div class="row">
+        {% for p in details %}
+        <div class="col-md-6 sec-project">
+          <a href="javascript:void(0)" class="hover-underline-animation">
+            <div class="sec-div">
+              <div class="gallery-img-div">
+                <img src="{{p.prj_images.url}}" alt="">
+              </div>
+
+              <div>
+                <button class="dta">
+                  <span>{{p.prj_name}}</span>
+                  <p>{{p.prj_para}}</p>
+                </button>
+              </div>
+            </div>
+          </a>
+        </div>
+        {% endfor %}
+     
+
+      </div>
+    </div>
+  </section>
+
+  
+
+{% endblock %}

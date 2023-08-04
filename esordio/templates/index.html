@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block title %}Home{% endblock %}
+
+{% block bannercss %} <link rel="stylesheet" href="{% static '/css/banner.css' %}">  {% endblock%}
+
+{% block navlogo %} 
+<a class="navbar-brand" href="{% url 'home' %}" target="_blank"><img id="logo-image" src="{% static 'images/logo-white.png' %}" alt="LOGO"></a>
+{% endblock%}
+ 
+{% block content %}
+
+
+
+  <main>
+    <section>
+      <!-- Main image carousel -->
+      <div class="main-image-slider">
+        <span class="image-link">
+          <img src="{% static 'images/esordio/banner2-01.jpg' %}"
+            alt="Extreme close up of a plant with flat leaves with rounded sides and pointy tips.">
+        </span>
+
+        <span class="image-link">
+          <img src="{% static 'images/banner02.jpg' %}"
+            alt="Top view of at least 3 plants with flat leaves with rounded sides and pointy tips arranged radially.">
+        </span>
+
+        <span class="image-link">
+          <img src="{% static 'images/banner03.jpg' %}"
+            alt="Close-up top view of a single plant with flat leaves with rounded sides and pointy tips, showing small serrations along the leaf margins.">
+        </span>
+
+
+      </div>
+      <div class="overlay"></div>
+      
+
+      </div>
+    </section>
+
+    <section class="section-pad-top section-pad" id="about">
+      <div class=" container home-about">
+        <div class="about-esordio">
+          <div class="esordio-subhead">
+            <p>ABOUT US</p>
+          </div>
+          <div class="row abt-row">
+            <div class="col-md-6">
+              <img src="{% static 'images/esordio/About-us.jpg' %}" alt="">
+            </div>
+            <div class="col-md-6">
+              <div>
+                <p>Esordio is your premier architectural design, construction, and project development destination. With a commitment to excellence and innovation, we specialize in transforming ideas into stunning realities. In every project, our dedicated team of professionals will collaborate with you every step of the way, ensuring your vision is captured with the utmost attention to detail. Backed by years of industry experience and a passion for creating extraordinary spaces, we deliver exceptional results that exceed expectations. Trust Esordio to craft unique environments that inspire, elevate, and endure.
+                </p>
+              </div>
+              <div class="button-2">
+                <a class="btn" href="{% url 'contact' %}">Contact us</a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section-pad">
+      <div class="parallax-container">
+        <div class="parallax-image"></div>
+        <div class="content">
+          <!-- Your content here -->
+        </div>
+      </div>
+
+
+    </section>
+
+    <section class="section-pad">
+      <div class="container">
+
+        <div class="esordio-subhead">
+          <p>Our Works</p>
+        </div>
+        <div>
+          <h2>Our Featured Projects</h2>
+        </div>
+
+        <div class="row ft-images">
+          <div class="col-lg-4 ft-images-sec">
+            <img src="{% static 'images/esordio/Featured-04.jpg' %}" alt="">
+          </div>
+          <div class="col-lg-4 ft-images-sec">
+            <img src="{% static 'images/esordio/Featured-05.jpg' %}" alt="">
+          </div>
+          <div class="col-lg-4 ft-images-sec">
+            <img src="{% static 'images/esordio/Featured-06.jpg' %}" alt="">
+          </div>
+          <div class="col-lg-6 ft-images-sec">
+            <img src="{% static 'images/esordio/Featured-07.jpg' %}" alt="">
+          </div>
+          <div class="col-lg-6 ft-images-sec">
+            <img src="{% static 'images/esordio/Featured-08.jpg' %}" alt="">
+          </div>
+        </div>
+        <div class="button-2 ft-button">
+          <a class="btn" href="{% url 'projects' %}">More Projects</a>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+
+
+
+
+  </main>
+
+{% endblock %}

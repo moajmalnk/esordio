@@ -1,0 +1,1 @@
+web: gunicorn EsordioApp.wsgi --log-file -

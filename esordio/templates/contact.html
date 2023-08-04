@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block title %}Contact us{% endblock %}
+
+{% block navlogo %}
+<a class="navbar-brand" href="{% url 'home' %}" target="_blank"><img src="{% static 'images/ESORDIOLOGOblack.png' %}"
+    alt="LOGO"></a>
+{% endblock%}
+
+{% block content %}
+
+<div class="pad-div"></div>
+<section>
+  <div class="container contact-sections">
+    <div class="row">
+      <div class="col-md-6 part-1">
+        <div class="head">
+          <h2>GET IN TOUCH</h2>
+        </div>
+        <div class="appointments">
+          <div class="location-a">
+            <span><img src="{% static 'images/icons/location.svg' %}" alt="Image" class="icon-li"></span>
+            <p>Fortune towers,24/2435/c, <br>
+              Thondayad, Chevarambalam PO. <br>
+              Kozhikode - 673017
+              <br>
+            </p>
+          </div>
+          <div class="mail">
+            <img src="{% static 'images/icons/mail.svg' %}" alt="Image" class="icon-li">
+            <a href="mailto:info@esordio.in">info@esordio.in</a>
+          </div>
+          <div>
+            <img src="{% static 'images/icons/telephone.svg' %}" alt="Image" class="icon-li">
+            <span><a href="tel:+91 8157 995 577">+91 8157 995 577</a></span>
+          </div>
+        </div>
+
+
+
+      </div>
+      <div class="col-md-6 part-2">
+        <div class="head-h3">
+          {% if success_message %}
+          <div class="alert alert-success">
+            Thank you for your message! We will get back to you soon.
+          </div>
+          {% endif %}
+
+          {% if fail_message %}
+          <div class="alert alert-danger">
+            Form submission failed. Please check the entered information and try again.
+          </div>
+          {% endif %}
+
+          
+          <form action="{% url 'contact' %}" method="post">
+            {% csrf_token %}
+            <input type="text" name="name" placeholder="Name">
+            <br>
+            <input type="number" name="phonenumber" placeholder="Number">
+            <br>
+            <input type="email" name="email" placeholder="Email">
+            <br>
+            <textarea name="message" id="" cols="" rows="5" placeholder="Message"></textarea>
+            <br>
+            <input type="submit" value="Submit" class="submit">
+
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+{% endblock %}
